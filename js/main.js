@@ -30,5 +30,16 @@ const app = new Vue ({
         newTodo: '',
 
         filterActive: false,
+    },
+
+    methods: {
+
+        //Rimuovo un elemnto dalla lista
+        removeTodo(indextoDo) {
+            console.log(indextoDo);
+
+            //remove from todo list
+            this.todos.splice(indextoDo, 1);
+        },
     }
 })
