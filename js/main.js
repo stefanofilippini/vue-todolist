@@ -34,6 +34,26 @@ const app = new Vue ({
 
     methods: {
 
+        //aggiunta di un elemento alla lista
+        addTodo() {
+            if (this.newTodo !=='') {
+                console.log(this.newTodo);
+
+                //aggiunta toDo a todos
+                this.todos.push({
+                    text: this.newTodo,
+                    completed: false,
+                });
+
+                //clean up
+                this.newTodo='';
+
+                //set focus
+                console.log(this.$refs);
+                this.$refs.todoInput.focus()
+            }
+        },
+
         //Rimuovo un elemnto dalla lista
         removeTodo(indextoDo) {
             console.log(indextoDo);
